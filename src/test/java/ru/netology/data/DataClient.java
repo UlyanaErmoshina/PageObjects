@@ -1,4 +1,4 @@
-package ru.netology;
+package ru.netology.data;
 
 import lombok.Value;
 
@@ -31,21 +31,16 @@ public class DataClient {
 
     @Value
 
-    public static class cardFromTransfer {
+    public static class cardInfo {
         private String card;
     }
 
-    public static cardFromTransfer getCardFromTransfer1(AuthInfo authInfo) {
-        return new cardFromTransfer("5559 0000 0000 0001");
-    }
-    @Value
-
-    public static class cardFromTransfer2 {
-        private String card;
+    public static cardInfo getFirstCardInfo() {
+        return new cardInfo("5559 0000 0000 0001");
     }
 
-        public static cardFromTransfer2 getCardFromTransfer2(AuthInfo authInfo) {
-            return new cardFromTransfer2("5559 0000 0000 0002");
+        public static cardInfo getSecondCardInfo() {
+            return new cardInfo("5559 0000 0000 0002");
         }
     }
 

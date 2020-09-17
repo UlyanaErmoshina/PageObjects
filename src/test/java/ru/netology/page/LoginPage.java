@@ -1,5 +1,5 @@
-package ru.netology;
-import ru.netology.DataClient;
+package ru.netology.page;
+import ru.netology.data.DataClient;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
