@@ -47,7 +47,7 @@ public class DashboardPage {
         String secondValue = card2.text();
         return findOutBalance(secondValue);
     }
-    public int findOutBalance(){
+    private int findOutBalance(String text){
         val start = text.indexOf(startBalance);
         val finish = text.indexOf(finishBalance);
         val value = text.substring(start + startBalance.length(),finish);
