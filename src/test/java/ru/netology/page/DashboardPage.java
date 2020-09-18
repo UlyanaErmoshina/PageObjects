@@ -41,4 +41,8 @@ public class DashboardPage {
         val value = text.substring(start + startBalance.length(), finish);
         return Integer.parseInt(value);
     }
+    public DashboardPage reloadBalance() {
+        reload.click();
+        return new DashboardPage();
+    }
 }
