@@ -42,8 +42,8 @@ public class TransferTest {
         cardPage.transfer(getSecondCardInfo(), refillSum);
         int endSumCard1 = dashboardPage.getFirstCardBalance();
         int endSumCard2 = dashboardPage.getSecondCardBalance();
-        assertEquals(currentSumCard1 + refillSum, endSumCard1,"перевод не прошел, на карте 1 сейчас " + endSumCard1);
-        assertEquals(currentSumCard2 - refillSum, endSumCard2,"пополнение не прошло , на карте2 сейчас " + endSumCard2);
+        assertEquals(currentSumCard1 + refillSum,"перевод не прошел, на карте 1 сейчас " + endSumCard1);
+        assertEquals(currentSumCard2 - refillSum,"пополнение не прошло , на карте2 сейчас " + endSumCard2);
     }
 
     @Test
