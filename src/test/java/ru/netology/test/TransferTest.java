@@ -40,8 +40,10 @@ public class TransferTest {
         int refillSum = 10100;
         val cardPage = dashboardPage.refillCard1();
         cardPage.transfer(getSecondCardInfo(), refillSum);
-        assertEquals(currentSumCard1 + refillSum,currentSumCard1);
-        assertEquals(currentSumCard2 - refillSum,currentSumCard2);
+        int endSumCard1 = dashboardPage.getFirstCardBalance();
+        int endSumCard2 = dashboardPage.getSecondCardBalance();
+        assertEquals(currentSumCard1,endSumCard1);
+        assertEquals(currentSumCard2,endSumCard2);
     }
 
 }
