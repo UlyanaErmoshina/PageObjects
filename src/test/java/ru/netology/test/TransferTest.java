@@ -40,31 +40,8 @@ public class TransferTest {
         int refillSum = 10100;
         val cardPage = dashboardPage.refillCard1();
         cardPage.transfer(getSecondCardInfo(), refillSum);
-        int endSumCard1 = dashboardPage.getFirstCardBalance();
-        int endSumCard2 = dashboardPage.getSecondCardBalance();
-        assertEquals(currentSumCard1 + refillSum,"перевод не прошел, на карте 1 сейчас " + endSumCard1);
-        assertEquals(currentSumCard2 - refillSum,"пополнение не прошло , на карте2 сейчас " + endSumCard2);
-    }
-
-    @Test
-    void shouldReload() {
-        open("http://localhost:7777");
-        val loginPage = new LoginPage();
-        val authInfo = DataClient.getAuthInfo();
-        val verificationPage = loginPage.validLogin(authInfo);
-        val smsCode = DataClient.getVerificationCodeFor(authInfo);
-        val dashboardPage = verificationPage.validVerify(smsCode);
-        int currentSumCard1 = dashboardPage.getFirstCardBalance();
-        int currentSumCard2 = dashboardPage.getSecondCardBalance();
-        int refillSum = 200;
-        val cardPage = dashboardPage.refillCard1();
-        cardPage.transfer(getSecondCardInfo(), refillSum);
-        int endSumCard1 = dashboardPage.getFirstCardBalance();
-        int endSumCard2 = dashboardPage.getSecondCardBalance();
-        dashboardPage.reloadBalance();
-        assertEquals(10000, endSumCard1);
-        assertEquals(10000, endSumCard2);
-
+        assertEquals(currentSumCard1 + refillSum,currentSumCard1);
+        assertEquals(currentSumCard2 - refillSum,currentSumCard2);
     }
 
 }
